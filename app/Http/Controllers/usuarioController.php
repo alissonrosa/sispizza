@@ -16,14 +16,12 @@ class usuarioController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
+    //Neste método, devemos buscar todos os registros dos usuários e passá-los para a view de listagem
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        //Neste método será feita a chamada da tela para cadastro de usuários
     }
 
     /**
@@ -34,7 +32,7 @@ class usuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Este método deverá receber os dados vindos do formulário de cadastro e realizar o processamento para persistência (junto ao BD)
     }
 
     /**
@@ -45,7 +43,8 @@ class usuarioController extends Controller
      */
     public function show($id)
     {
-        //
+        //Este método de receber um id para localizar determinado usuário no BD e passá-lo para a view de exibição detalhada.
+ 
     }
 
     /**
@@ -56,7 +55,7 @@ class usuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        //Este método de receber um id para localizar determinado usuário no BD e passá-lo para a view de edição de registro (formulário preenchido, porém com campos editáveis)
     }
 
     /**
@@ -68,7 +67,7 @@ class usuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //Este método deverá receber os dados vindos do formulário de edição e realizar o processamento para persistência (junto ao BD)
     }
 
     /**
@@ -79,6 +78,6 @@ class usuarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //Este método de receber um id para localizar determinado usuário no BD e realizar o processamento para remoção dos dados (junto ao BD)
     }
 }

@@ -37,3 +37,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 }
+
+//daqui foi oq alisson ja tinha feito em sala
+use Illuminate\Database\Eloquent\Model;
+
+class user extends Model
+{
+    protected $fillable = ['id','name','telefone','email','rua','bairro','numero','funcionario_id'];
+}
