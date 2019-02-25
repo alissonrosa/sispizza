@@ -16,8 +16,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','id','telefone','rua','bairro','numero','funcionario_id',
     ];
+    //    protected $fillable = ['id','name','telefone','email','rua','bairro','numero','funcionario_id'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -38,10 +39,4 @@ class User extends Authenticatable
     ];
 }
 
-//daqui foi oq alisson ja tinha feito em sala
-use Illuminate\Database\Eloquent\Model;
 
-class user extends Model
-{
-    protected $fillable = ['id','name','telefone','email','rua','bairro','numero','funcionario_id'];
-}
