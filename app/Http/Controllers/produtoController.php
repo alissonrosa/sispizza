@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\produto;
 
 class produtoController extends Controller
 {
@@ -13,7 +14,11 @@ class produtoController extends Controller
      */
     public function index()
     {
-        //
+      
+        $produtos = produto::all();
+
+        return view("produto.listar",['produtos'=>$produtos]);
+
     }
 
     /**
@@ -23,7 +28,7 @@ class produtoController extends Controller
      */
     public function create()
     {
-        //
+         return view("produto.inserir");
     }
 
     /**
@@ -34,7 +39,16 @@ class produtoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $produto = new produto();
+        //$produto->id = $request->input('id');
+        $produto->nome = $request->input('nome');
+        $produto->preço = $request->input('preço');
+        $produto->tipo = $request->input('tipo');
+
+        $produto->save();
+        return redirect()->route('produto.index');
+
+        
     }
 
     /**
@@ -45,7 +59,7 @@ class produtoController extends Controller
      */
     public function show($id)
     {
-        //
+        $produto = produto::find($id);
     }
 
     /**
@@ -56,7 +70,8 @@ class produtoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $produto = produto::find($id);
+        return view('produto.editar', ['f' => $produto]);
     }
 
     /**
@@ -68,7 +83,15 @@ class produtoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       //echo "$id";
+        $produto = produto::find($id); // consulta dos dados que estão no BD 
+        $produto->nome = $request->input('nome');
+        $produto->preço = $request->input('preço');
+        $produto->tipo = $request->input('tipo');
+
+        $produto->save();
+
+        return redirect()->route('produto.index');
     }
 
     /**
@@ -79,6 +102,9 @@ class produtoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produto = produto::find($id); // consulta no BD
+        $produto->delete();  // Exclui do BD
+
+        return redirect()->route('produto.index');
     }
 }
