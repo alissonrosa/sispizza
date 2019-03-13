@@ -16,10 +16,22 @@ class CreateFuncionariosTable extends Migration
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->increments('id');
 			$table->string('cpf',14);
-			$table->float('salario');
-			$table->integer('ch');
-			$table->unsignedInteger('usuario_id');
+            $table->string('salario');
+            $table->string('ch');
+			$table->unsignedInteger('usuario_id')->nullable();
 			$table->foreign('usuario_id')->references('id')->on('usuarios');
+            $table->timestamps();
+        });
+
+        Schema::create('usuarios', function (Blueprint $table) {
+            $table->string('name');
+            $table->string('telefone');
+            $table->string('email');
+            $table->string('rua');
+            $table->string('bairro');
+            $table->string('numero');
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -32,5 +44,6 @@ class CreateFuncionariosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('funcionarios');
+        Schema::dropIfExists('usuarios');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class usuarioController extends Controller
 {
@@ -13,15 +14,21 @@ class usuarioController extends Controller
      */
     public function index()
     {
-        //
+      
+        $users = user::all();
+
+        return view("user.listar",['users'=>$users]);
+
     }
 
-    //Neste método, devemos buscar todos os registros dos usuários e passá-los para a view de listagem
+    /**
+     * Show the form for creating a new resource.
+     *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //Neste método será feita a chamada da tela para cadastro de usuários
+         return view("user.inserir");
     }
 
     /**
@@ -32,7 +39,14 @@ class usuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //Este método deverá receber os dados vindos do formulário de cadastro e realizar o processamento para persistência (junto ao BD)
+        $users = new user();
+
+        $users->name = $request->input('name');
+        $users->email = $request->input('email')
+        $users->save();
+        return redirect()->route('user.index');
+
+        
     }
 
     /**
@@ -43,8 +57,7 @@ class usuarioController extends Controller
      */
     public function show($id)
     {
-        //Este método de receber um id para localizar determinado usuário no BD e passá-lo para a view de exibição detalhada.
- 
+        $user = user::find($id);
     }
 
     /**
@@ -55,7 +68,8 @@ class usuarioController extends Controller
      */
     public function edit($id)
     {
-        //Este método de receber um id para localizar determinado usuário no BD e passá-lo para a view de edição de registro (formulário preenchido, porém com campos editáveis)
+        $user = user::find($id);
+        return view('user.editar', ['f' => $user]);
     }
 
     /**
@@ -67,7 +81,15 @@ class usuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //Este método deverá receber os dados vindos do formulário de edição e realizar o processamento para persistência (junto ao BD)
+       //echo "$id";
+        $user = user::find($id); // consulta dos dados que estão no BD 
+        $user->nome = $request->input('nome');
+        $user->preço = $request->input('preço');
+        $user->tipo = $request->input('tipo');
+
+        $user->save();
+
+        return redirect()->route('user.index');
     }
 
     /**
@@ -78,6 +100,9 @@ class usuarioController extends Controller
      */
     public function destroy($id)
     {
-        //Este método de receber um id para localizar determinado usuário no BD e realizar o processamento para remoção dos dados (junto ao BD)
+        $user = user::find($id); // consulta no BD
+        $user->delete();  // Exclui do BD
+
+        return redirect()->route('user.index');
     }
 }

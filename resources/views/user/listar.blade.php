@@ -46,10 +46,10 @@
 
 <div class="container">
 
-    <h1 style="font-size: 25px; font-family: Arial;">produtos</h1>
+    <h1 style="font-size: 25px; font-family: Arial;">users</h1>
 </br>
 
-<div id="produto"></div>
+<div id="user"></div>
 
 
 <div id="list" class="row">
@@ -61,23 +61,21 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Tipo</th>
+                    <th>Email</th>
                     <th class="actions"></th>
                     <th class="actions"></th>
                 </tr>
             </thead>
             <tbody>
-             @foreach($produtos as $c)
+             @foreach($user as $c)
              <tr>
-                <td> <a href="{{ route('produto.show', $c->id) }}"> {{$c->nome}} </a> </td> <!-- rever isso -->
-                <td>{{$c->preço}}</td>
-                <td>{{$c->tipo}}</td> <!-- nao tem sabor mas ta aprecendo de boa -->
+                <td> <a href="{{ route('user.show', $c->id) }}"> {{$c->name}} </a> </td> <!-- rever isso -->
+                <td>{{$c->email}}</td> <!-- nao tem sabor mas ta aprecendo de boa -->
                 <td>
-                    <a class="btn btn btn-danger" href="produto/{{$c->id}}/edit">Editar</a>   
+                    <a class="btn btn btn-danger" href="user/{{$c->id}}/edit">Editar</a>   
                 </td>
                 <td>
-                    <form action="{{ route('produto.destroy',$c->id) }}" method="post">
+                    <form action="{{ route('user.destroy',$c->id) }}" method="post">
                     @csrf {{ csrf_field() }} 
                     {{ method_field('DELETE') }}
                     <button  type="submit" class="btn btn-danger">Excluir</button>
@@ -93,11 +91,12 @@
     
 </div>
 </div>
+
 <br>
 <div id="actions" class="row">
     <div>
-       <button id='btn-cadastrar-produto'  type="submit" class="btn btn-success" style="background-color: grey; border-color: white;">
-        <a href="{{route('produto.create') }}">Adicionar</a></button>
+       <button id='btn-cadastrar-user'  type="submit" class="btn btn-success" style="background-color: grey; border-color: white;">
+        <a href="{{route('user.create') }}">Adicionar</a></button>
 
         <br>
         <br>

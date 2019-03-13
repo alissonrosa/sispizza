@@ -3,8 +3,42 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class funcionario extends Model
+class funcionario extends Authenticatable
 {
-    protected $fillable = ['salario','cpf','id','ch'];
+    use Notifiable;
+
+
+    protected $fillable = [
+
+      'id',
+      'nome',
+      'pasword',
+      'ch',
+      'salario',
+      'cpf',
+      'email',
+      'telefone',
+      'rua',
+      'bairro',
+      'numero',
+      'users_id',
+
+    ];
+
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }

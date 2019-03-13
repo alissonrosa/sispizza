@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>listar Produto</title>
+    <title>listarFuncionario</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -46,10 +46,10 @@
 
 <div class="container">
 
-    <h1 style="font-size: 25px; font-family: Arial;">produtos</h1>
+    <h1 style="font-size: 20px; font-family: Arial;">Funcionarios</h1>
 </br>
 
-<div id="produto"></div>
+<div id="funcionario"></div>
 
 
 <div id="list" class="row">
@@ -61,28 +61,29 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Tipo</th>
+                    <th>Cpf</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Rua</th>
                     <th class="actions"></th>
                     <th class="actions"></th>
                 </tr>
             </thead>
             <tbody>
-             @foreach($produtos as $c)
+             @foreach($funcionarios as $c)
              <tr>
-                <td> <a href="{{ route('produto.show', $c->id) }}"> {{$c->nome}} </a> </td> <!-- rever isso -->
-                <td>{{$c->preço}}</td>
-                <td>{{$c->tipo}}</td> <!-- nao tem sabor mas ta aprecendo de boa -->
-                <td>
-                    <a class="btn btn btn-danger" href="produto/{{$c->id}}/edit">Editar</a>   
+                <td> <a href="{{ route('funcionario.show', $c->id) }}"> {{$c->nome}} </a> </td>
+                <td> {{$c->cpf}}</td>
+                <td>{{$c->email}}</td>
+                <td> {{$c->telefone}}</td>
+                <td>{{$c->rua}}</td>
+                <td><a class="btn btn-warning btn-xs" href="funcionario/{{$c->id}}/edit">Editar</a>   
                 </td>
-                <td>
-                    <form action="{{ route('produto.destroy',$c->id) }}" method="post">
+                <td><form action="{{ route('funcionario.destroy',$c->id) }}" method="post">
                     @csrf {{ csrf_field() }} 
                     {{ method_field('DELETE') }}
-                    <button  type="submit" class="btn btn-danger">Excluir</button>
-                    </form>
-                </td>
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
             </tr>
             
             @endforeach
@@ -92,19 +93,18 @@
     
     
 </div>
-</div>
+</div> 
+
 <br>
 <div id="actions" class="row">
     <div>
-       <button id='btn-cadastrar-produto'  type="submit" class="btn btn-success" style="background-color: grey; border-color: white;">
-        <a href="{{route('produto.create') }}">Adicionar</a></button>
+       <button id='btn-cadastrar-funcionario'  type="submit" class="btn btn-success" style="background-color: grey; border-color: white;">
+        <a style="text-decoration: white;" href="{{route('funcionario.create') }}">Adicionar</a></button>
 
         <br>
         <br>
     </div>
 </div>
-
-
 
 
 </div>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>cadastrarProdutos</title>
+    <title>cadastrarFuncionarios</title>
     <link rel="icon" href="../img/ico.png" type="image/gif">
     <link rel="stylesheet" href="./bundle/css.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -36,40 +36,74 @@
 <br>
 
 <div class="container-fluid">
-    <h3 class="page-header" style="text-align: center; font-size: 20px; font-family: Arial;">Adicionar produto</h3>
+
+    <h3 class="page-header" style="font-size: 20px; font-family: Arial;">Adicionar Funcionario</h3>
 </br>
 <div id="msg"></div>
 
 
-<form method="POST" action="{{route('produto.store')}}" id="form">
-  <!--  campos de form -->
+<form method="POST" action="{{route('funcionario.store')}}" id="form">
+  <!-- campos de form -->
   @csrf
   <div class="row">
+   <div class="form-group col-md-4">
+     <label for="campo0">Nome</label>
+     <input type="text" class="form-control" id="name" name="name" placeholder="">
+ </div>
+
+
+     <div class="col-md-6">
+        <label for="campo1" class="form-group col-md-4">{{ __('Password') }}</label>
+         <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+         @if ($errors->has('password'))
+             <span class="invalid-feedback" role="alert">
+                 <strong>{{ $errors->first('password') }}</strong>
+             </span>
+         @endif
+     </div>
 
  <div class="form-group col-md-4">
-     <label for="campo2">Nome</label>
-     <input type="text" class="form-control" id="nome" name="nome" placeholder="">
+     <label for="campo3">Cpf</label>
+     <input type="text" class="form-control" id="cpf" name="cpf" placeholder="">
  </div>
 
  <div class="form-group col-md-4">
-     <label for="campo3">preço</label>
-     <input type="text" class="form-control" id="preço" name="preço" placeholder="">
+     <label for="campo4">Email</label>
+     <input type="text" class="form-control" id="email" name="email" placeholder="">
  </div>
 </div>
 
 <div class="row">
-
- <div class="form-group col-md-4">
-     <label for="campo2">Tipo</label>
-     <input type="text" class="form-control" id="tipo" name="tipo" placeholder="">
+   <div class="form-group col-md-4">
+     <label for="campo5">Telefone</label>
+     <input type="text" class="form-control" id="telefone" name="telefone" placeholder="">
  </div>
 
+ <div class="form-group col-md-4">
+     <label for="campo6">Rua</label>
+     <input type="text" class="form-control" id="rua" name="rua" placeholder="">
+ </div>
+
+ <div class="form-group col-md-4">
+     <label for="campo7">Bairro</label>
+     <input type="text" class="form-control" id="bairro" name="bairro">
+ </div>
 </div>
+
+
+ <div class="form-group col-md-4">
+     <label for="campo8">Numero</label>
+     <input type="text" class="form-control" id="numero" name="numero">
+ </div>
+</div>
+
+
+
 
 <hr />
 <div id="actions" class="row">
     <div class="col-md-12">
-      <button id='btn-cadastrar-produto' type="submit" class="btn btn-success mr-sm-3" style="background-color: grey;border-color: white;">Salvar</button>
+      <button id='btn-cadastrar-funcionario' type="submit" class="btn btn-success mr-sm-3" style="background-color: grey;border-color: white;">Salvar</button>
       <br>
       <br>
   </div>
@@ -81,13 +115,13 @@
 
 </div>
 
-<footer style="background-color: grey;">
+<footer style="background-color: white;">
 
 </footer>
 
 <script src="../../bundle/babelpolyfill.bundle.js"></script>
 <script src="../../bundle/index.bundle.js"></script>
-<script src="../../bundle/produtoController.bundle.js"></script>
+<script src="../../bundle/funcionarioController.bundle.js"></script>
 
 </body>
 
