@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Estoque;
 
-class ingredienteController extends Controller
+class estoqueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,11 @@ class ingredienteController extends Controller
      */
     public function index()
     {
-        //
+      
+        $estoques = Estoque::all();
+
+        return view("estoque.listar",['estoques'=>$estoques]);
+
     }
 
     /**
@@ -23,7 +28,7 @@ class ingredienteController extends Controller
      */
     public function create()
     {
-        //
+         return view("estoque.inserir");
     }
 
     /**
@@ -34,7 +39,15 @@ class ingredienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $estoque = new Estoque();
+        //$funcionario->id = $request->input('id');
+        $estoque->nome = $request->input('nome');
+        $estoque->quantidade = $request->input('quantidade');
+
+        $estoque->save();
+        return redirect()->route('estoque.index');
+
+        
     }
 
     /**
@@ -45,7 +58,7 @@ class ingredienteController extends Controller
      */
     public function show($id)
     {
-        //
+        $estoque = Estoque::find($id);
     }
 
     /**
@@ -56,7 +69,8 @@ class ingredienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $estoque = Estoque::find($id);
+        return view('estoque.editar', ['f' => $estoque]);
     }
 
     /**
@@ -68,7 +82,14 @@ class ingredienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       //echo "$id";
+        $estoque = Estoque::find($id); // consulta dos dados que estão no BD 
+        $estoque->nome = $request->input('nome');
+        $estoque->quantidade = $request->input('quantidade');
+
+        $estoque->save();
+
+        return redirect()->route('estoque.index');
     }
 
     /**
@@ -79,6 +100,9 @@ class ingredienteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $estoque = Estoque::find($id); // consulta no BD
+        $estoque->delete();  // Exclui do BD
+
+        return redirect()->route('estoque.index');
     }
 }

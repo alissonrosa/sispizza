@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Funcionario;
+use Illuminate\Support\Facades\Hash;
+use App\User;
 
-class funcionarioController extends Controller
+class FuncionarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +16,11 @@ class funcionarioController extends Controller
      */
     public function index()
     {
-        //
+      
+        $funcionarios = Funcionario::with('usuario')->get();
+
+        return view("funcionario.listar",['funcionarios'=>$funcionarios]);
+
     }
 
     /**
@@ -23,7 +30,7 @@ class funcionarioController extends Controller
      */
     public function create()
     {
-        //
+         return view("funcionario.inserir");
     }
 
     /**
@@ -34,7 +41,29 @@ class funcionarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $funcionario = new Funcionario();
+        $user = new User();
+
+        $funcionario->cpf = $request->input('cpf');
+        $funcionario->salario = $request->input('salario'); // falta o campo no formulario; como assim? mim esqueci
+        $funcionario->ch = $request->input('ch');
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->telefone = $request->input('telefone');
+        $user->rua = $request->input('rua');
+        $user->bairro = $request->input('bairro');
+        $user->numero = $request->input('numero');
+        $user->password = Hash::make('123456');
+
+        $user->save();
+
+        $funcionario->usuario_id = $user->id;
+        $funcionario->save();
+        
+        return redirect()->route('funcionario.index','user.index');
+
+        
     }
 
     /**
@@ -45,7 +74,7 @@ class funcionarioController extends Controller
      */
     public function show($id)
     {
-        //
+        $funcionario = Funcionario::find($id);
     }
 
     /**
@@ -56,7 +85,8 @@ class funcionarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        $funcionario = Funcionario::find($id);
+        return view('funcionario.editar', ['f' => $funcionario]);
     }
 
     /**
@@ -68,7 +98,19 @@ class funcionarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       //echo "$id";
+        $funcionario = Funcionario::find($id); // consulta dos dados que estão no BD 
+        $funcionario->nome = $request->input('nome');
+        $funcionario->cpf = $request->input('cpf');
+        $funcionario->email = $request->input('email');
+        $funcionario->telefone = $request->input('telefone');
+        $funcionario->rua = $request->input('rua');
+        $funcionario->bairro = $request->input('bairro');
+        $funcionario->numero = $request->input('numero');
+
+        $funcionario->save();
+
+        return redirect()->route('funcionario.index');
     }
 
     /**
@@ -79,6 +121,9 @@ class funcionarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $funcionario = Funcionario::find($id); // consulta no BD
+        $funcionario->delete();  // Exclui do BD
+
+        return redirect()->route('funcionario.index');
     }
 }

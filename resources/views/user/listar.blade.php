@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>listar Produto</title>
+    <title>listar Usuarios</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -46,10 +46,10 @@
 
 <div class="container">
 
-    <h1 style="font-size: 25px; font-family: Arial;">produtos</h1>
+    <h1 style="font-size: 25px; font-family: Arial;">users</h1>
 </br>
 
-<div id="produto"></div>
+<div id="user"></div>
 
 
 <div id="list" class="row">
@@ -61,23 +61,22 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Tipo</th>
+                    <th>Email</th>
                     <th class="actions"></th>
                     <th class="actions"></th>
                 </tr>
             </thead>
             <tbody>
-             @foreach($produtos as $c)
+                
+             @foreach($users as $c)
              <tr>
-                <td> <a href="{{ route('produto.show', $c->id) }}"> {{$c->nome}} </a> </td> <!-- rever isso -->
-                <td>{{$c->preço}}</td>
-                <td>{{$c->tipo}}</td> <!-- nao tem sabor mas ta aprecendo de boa -->
+                <td> <a href="{{ route('user.show', $c->id) }}"> {{$c->name}} </a> </td>
+                <td>{{$c->email}}</td>
                 <td>
-                    <a class="btn btn btn-warning" href="produto/{{$c->id}}/edit">Editar</a>   
+                    <a class="btn btn btn-warning" href="user/{{$c->id}}/edit">Editar</a>  
                 </td>
                 <td>
-                    <form action="{{ route('produto.destroy',$c->id) }}" method="post">
+                    <form action="{{ route('user.destroy',$c->id) }}" method="post">
                     @csrf {{ csrf_field() }} 
                     {{ method_field('DELETE') }}
                     <button  type="submit" class="btn btn-danger">Excluir</button>
@@ -93,11 +92,12 @@
     
 </div>
 </div>
+
 <br>
 <div id="actions" class="row">
     <div>
-       <button id='btn-cadastrar-produto'  type="submit" class="btn btn-success" style="border-color: white;">
-        <a style="color: inherit;" href="{{route('produto.create') }}">Adicionar</a></button>
+       <button id='btn-cadastrar-user'  type="submit" class="btn btn-success" style="border-color: white;">
+        <a style="color: inherit;" href="{{route('user.create') }}">Adicionar</a></button>
 
         <br>
         <br>
@@ -108,10 +108,6 @@
 
 
 </div>
-
-
-
-<!--<a href="{{ route('produto.create') }}">Novo</a>-->
 
 
 <footer style="background-color: white;">

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>cadastrarProdutos</title>
+    <title>cadastrarEstoque</title>
     <link rel="icon" href="../img/ico.png" type="image/gif">
     <link rel="stylesheet" href="./bundle/css.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -17,7 +17,7 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: grey; color:white;height: 30px">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #339966; color:white;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,9 +26,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/sispizza/public/" style="color:white; font-size: 14px; font-family: Arial;">Home</a>
+                    <a class="nav-link" href="#" style="color:white; font-size: 20px; font-family: Times New Roman;">Home</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:white; font-size: 20px; font-family: Times New Roman; ">Funcionário</a>
+                </li>
+
             </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-danger btn-lg active" role="button" aria-pressed="true"href="#">Sair</a>
+            </form>
         </div>
     </nav>
 </header>
@@ -36,40 +44,31 @@
 <br>
 
 <div class="container-fluid">
-    <h3 class="page-header" style="text-align: center; font-size: 20px; font-family: Arial;">Adicionar produto</h3>
+
+    <h3 class="page-header" style="font-size: 20px; font-family: Arial;">Adicionar Estoque</h3>
 </br>
 <div id="msg"></div>
 
 
-<form method="POST" action="{{route('produto.store')}}" id="form">
+<form method="POST" action="{{route('estoque.store')}}" id="form">
   <!-- area de campos do form -->
   @csrf
   <div class="row">
-
- <div class="form-group col-md-4">
-     <label for="campo2">Nome</label>
+   <div class="form-group col-md-4">
+     <label for="campo1">Nome</label>
      <input type="text" class="form-control" id="nome" name="nome" placeholder="">
  </div>
 
  <div class="form-group col-md-4">
-     <label for="campo3">preço</label>
-     <input type="text" class="form-control" id="preço" name="preço" placeholder="">
- </div>
-</div>
-
-<div class="row">
-
- <div class="form-group col-md-4">
-     <label for="campo2">Tipo</label>
-     <input type="text" class="form-control" id="tipo" name="tipo" placeholder="">
+     <label for="campo2">Quantidade</label>
+     <input type="text" class="form-control" id="quantidade" name="quantidade" placeholder="">
  </div>
 
-</div>
 
 <hr />
 <div id="actions" class="row">
     <div class="col-md-12">
-      <button id='btn-cadastrar-produto' type="submit" class="btn btn-success mr-sm-3" style="background-color: grey;border-color: white;">Salvar</button>
+      <button id='btn-cadastrar-estoque' type="submit" class="btn btn-success mr-sm-2">Salvar</button>
       <!--<a href="index.html" class="btn btn-default">Cancelar</a>-->
       <br>
       <br>
@@ -81,13 +80,13 @@
         <button id='btn-exibir-formulario' type="button" class="btn btn-success">Cadastrar</button>
         <br>
         <br>
-        <div id="produtos"></div>
+        <div id="funcionarios"></div>
     </div>-->
 
    <!-- <div id="formulario">
         <div class="row">
             <div class="col-sm">
-                <form method="POST" action="{{route('produto.store')}}" id="form">
+                <form method="POST" action="{{route('funcionario.store')}}" id="form">
                   
                     <div class="form-group">
                         <label for="siape">Siape</label>
@@ -99,8 +98,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="preço">E-mail</label>
-                        <input type="text" class="form-control" id="preço" name="preço" placeholder="" />
+                        <label for="email">E-mail</label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="" />
                     </div>
                     <div class="form-group">
                         <label for="telefone">Telefone</label>
@@ -118,7 +117,7 @@
                     </div>
 
                     <div class="form-inline">
-                        <button id='btn-cadastrar-produto' type="submit" class="btn btn-success mr-sm-2">Salvar</button>
+                        <button id='btn-cadastrar-funcionario' type="submit" class="btn btn-success mr-sm-2">Salvar</button>
                      
                     </div>
                 </form>
@@ -131,13 +130,13 @@
 
 </div>
 
-<footer style="background-color: grey;">
+<footer style="background-color: #339966;">
 
 </footer>
 
 <script src="../../bundle/babelpolyfill.bundle.js"></script>
 <script src="../../bundle/index.bundle.js"></script>
-<script src="../../bundle/produtoController.bundle.js"></script>
+<script src="../../bundle/estoqueController.bundle.js"></script>
 
 </body>
 

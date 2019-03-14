@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>listar Produto</title>
+    <title>listarEstoque</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -21,7 +21,7 @@
     <script src="js/bootstrap.min.js"></script>
 
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: grey; color:white; height: 30px;" >
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #339966; color:white; height: 50px;" >
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,11 +30,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="http://localhost/sispizza/public/" style="color: white; font-size: 14px; font-family: Arial;"> Home
+                    <a class="nav-link" href="#" style="color: white; font-size: 20px; font-family: Times New Roman;"> Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost/SisSaude/public/paciente" style="color:white; font-size: 20px; font-family: Times New Roman;"></a>
+                </li>
             </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-danger btn-lg active" role="button" aria-pressed="true"href="../../login.html" style="">Sair</a>
+            </form>
         </div>
     </nav>
 </header>
@@ -46,10 +52,10 @@
 
 <div class="container">
 
-    <h1 style="font-size: 25px; font-family: Arial;">produtos</h1>
+    <h1 style="font-size: 20px; font-family: Arial;">Estoques</h1>
 </br>
 
-<div id="produto"></div>
+<div id="estoque"></div>
 
 
 <div id="list" class="row">
@@ -61,28 +67,24 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Tipo</th>
+                    <th>Quantidade</th>
                     <th class="actions"></th>
                     <th class="actions"></th>
                 </tr>
             </thead>
             <tbody>
-             @foreach($produtos as $c)
+             @foreach($estoques as $c)
              <tr>
-                <td> <a href="{{ route('produto.show', $c->id) }}"> {{$c->nome}} </a> </td> <!-- rever isso -->
-                <td>{{$c->preço}}</td>
-                <td>{{$c->tipo}}</td> <!-- nao tem sabor mas ta aprecendo de boa -->
-                <td>
-                    <a class="btn btn btn-warning" href="produto/{{$c->id}}/edit">Editar</a>   
+                <td> <a href="{{ route('estoque.show', $c->id) }}"> {{$c->nome}} </a> </td>
+                <td> {{$c->nome}}</td>
+                <td>{{$c->quantidade}}</td>
+                <td><a class="btn btn-warning btn-xs" href="estoque/{{$c->id}}/edit">Editar</a>   
                 </td>
-                <td>
-                    <form action="{{ route('produto.destroy',$c->id) }}" method="post">
+                <td><form action="{{ route('estoque.destroy',$c->id) }}" method="post">
                     @csrf {{ csrf_field() }} 
                     {{ method_field('DELETE') }}
-                    <button  type="submit" class="btn btn-danger">Excluir</button>
-                    </form>
-                </td>
+                    <button type="submit" class="btn btn-danger">Excluir</button>
+                </form>
             </tr>
             
             @endforeach
@@ -92,12 +94,33 @@
     
     
 </div>
-</div>
+</div> <!-- /#list -->
+
+
+   <!-- <table border="1px">
+
+    @foreach($funcionarios as $c)
+        <tr>
+            <td> <a href="{{ route('funcionario.show', $c->id) }}"> {{$c->nome}} </a> </td>
+            <td>{{$c->email}}</a></td>
+            <td>{{$c->img}}</td>
+            <td> <a href="funcionario/{{$c->id}}/edit">Editar</a> </td>
+            <td>
+                <form action="{{ route('funcionario.destroy', $c->id) }}" method="post">
+                    @csrf {{ csrf_field() }} - fecha aqui!
+                    {{ method_field('DELETE') }}
+                    <input type="submit" value="Excluir">
+                </form>
+            </td>
+        </tr>
+    @endforeach
+
+</table>-->
 <br>
 <div id="actions" class="row">
-    <div>
-       <button id='btn-cadastrar-produto'  type="submit" class="btn btn-success" style="border-color: white;">
-        <a style="color: inherit;" href="{{route('produto.create') }}">Adicionar</a></button>
+    <div class="col-md-12">
+       <button id='btn-cadastrar-estoque'  type="submit" class="btn btn-success mr-sm-2">
+        <a style="text-decoration: white;" href="{{route('estoque.create') }}">Adicionar</a></button>
 
         <br>
         <br>
@@ -111,16 +134,16 @@
 
 
 
-<!--<a href="{{ route('produto.create') }}">Novo</a>-->
+<!--<a href="{{ route('funcionario.create') }}">Novo</a>-->
 
 
-<footer style="background-color: white;">
+<footer style="background-color: #339966;">
 
 </footer>
 
 <script src="../../bundle/babelpolyfill.bundle.js"></script>
 <script src="../../bundle/index.bundle.js"></script>
-<script src="../../bundle/relestoqueController.bundle.js"></script>
+<script src="../../bundle/estoqueController.bundle.js"></script>
 
 </body>
 

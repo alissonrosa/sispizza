@@ -16,7 +16,16 @@ Route::resource('funcionario','funcionarioController');
 Route::resource('ingrediente','ingredienteController');
 Route::resource('pedido','pedidoController');
 Route::resource('produto','produtoController');
-Route::resource('usuario','usuarioController');
+Route::resource('usuario','usuarioController', [
+	'names' => [
+		'store' => 'user.store',
+		'create' => 'user.create',
+		'destroy' => 'user.destroy',
+		'update' => 'user.update',
+		'show' => 'user.show',
+		'index' => 'user.index'
+	]
+	]);
 
 
 
@@ -27,3 +36,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::prefix('painel')->middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return 'Autenticado';
+    });
+
+});
