@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
     <title>editarUsuarios</title>
+=======
+    <title>editarFuncionarios</title>
+>>>>>>> master
     <link rel="icon" href="../img/ico.png" type="image/gif">
     <link rel="stylesheet" href="./bundle/css.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -17,7 +21,11 @@
 <body>
 
     <header>
+<<<<<<< HEAD
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: gray; color:white;">
+=======
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #339966; color:white;">
+>>>>>>> master
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,7 +53,11 @@
 
 <div class="container">
 
+<<<<<<< HEAD
     <h1 style="font-size: 20px; font-family: Arial;">Editar Usuario</h1>
+=======
+    <h1 style="font-size: 20px; font-family: Arial;">Editar Funcionário</h1>
+>>>>>>> master
     <br>
 
 
@@ -165,7 +177,11 @@
 
 </div>
 
+<<<<<<< HEAD
  <footer style="background-color: gray;">
+=======
+ <footer style="background-color: #339966;">
+>>>>>>> master
         
     </footer>
 

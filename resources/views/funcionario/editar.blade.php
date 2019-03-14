@@ -16,8 +16,13 @@
 
 <body>
 
+<<<<<<< HEAD
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: gray; color:white;">
+=======
+ <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: gray; color:white;height: 30px">
+>>>>>>> master
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,6 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                      <li class="nav-item">
+<<<<<<< HEAD
                         <a class="nav-link" href="#" style="color:white; font-size: 20px; font-family: Times New Roman;">Home</a>
                     </li>
 
@@ -37,6 +43,11 @@
                 <form class="form-inline my-2 my-lg-0">
                     <a class="btn btn-danger btn-lg active" role="button" aria-pressed="true"href="../../index.html">Sair</a>
                 </form>
+=======
+                        <a class="nav-link" href="http://localhost/sispizza/public/" style="color:white; font-size: 14px; font-family: Arial;">Home</a>
+                    </li>
+                </ul>
+>>>>>>> master
             </div>
         </nav>
 </header>
@@ -45,14 +56,22 @@
 
 <div class="container">
 
+<<<<<<< HEAD
     <h1 style="font-size: 20px; font-family: Arial;">Editar Funcionário</h1>
+=======
+    <h1 style="text-align: center; font-size: 20px; font-family: Arial;">Editar Funcionário</h1>
+>>>>>>> master
     <br>
 
 
 <div id="formulario">
 <form method="POST" action="{{route('funcionario.update',$f->id)}}" id="form">
         @csrf
+<<<<<<< HEAD
       <!-- area de campos do form -->
+=======
+      <!-- campos de form -->
+>>>>>>> master
 
       {{method_field('PUT')}}
       <div class="row">
@@ -98,8 +117,12 @@
       <hr />
       <div id="actions" class="row">
         <div class="col-md-12">
+<<<<<<< HEAD
           <button id='btn-cadastrar-funcionario' type="submit" class="btn btn-success mr-sm-2">Salvar</button>
           <!--<a href="index.html" class="btn btn-default">Cancelar</a>-->
+=======
+          <button id='btn-cadastrar-funcionario' type="submit" class="btn btn-success mr-sm-2" style="background-color: grey;border-color: white;">Salvar</button>
+>>>>>>> master
           <br>
         <br>
         </div>
@@ -107,6 +130,7 @@
     </form>
 </div>
 
+<<<<<<< HEAD
     <!--<div id="formulario">
         <div class="row">
             <div class="col-sm">
@@ -161,11 +185,18 @@
     </div>-->
 
 
+=======
+ 
+>>>>>>> master
     <br>
 
 </div>
 
+<<<<<<< HEAD
  <footer style="background-color: gray;">
+=======
+ <footer style="background-color: white;">
+>>>>>>> master
         
     </footer>
 

@@ -21,7 +21,11 @@
     <script src="js/bootstrap.min.js"></script>
 
     <header>
+<<<<<<< HEAD
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: gray; color:white; height: 50px;" >
+=======
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: grey; color:white; height: 30px;" >
+>>>>>>> master
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,18 +34,29 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
+<<<<<<< HEAD
                     <a class="nav-link" href="http://localhost/sispizza/public/" style="color: white; font-size: 20px; font-family: Times New Roman;"> Home
+=======
+                    <a class="nav-link" href="http://localhost/sispizza/public/" style="color: white; font-size: 14px; font-family: Arial;"> Home
+>>>>>>> master
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
             </ul>
+<<<<<<< HEAD
             <form class="form-inline my-2 my-lg-0">
                 <a class="btn btn-danger btn-lg active" role="button" aria-pressed="true"href="../../login.html" style="">Sair</a>
             </form>
+=======
+>>>>>>> master
         </div>
     </nav>
 </header>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 </br>
 </br>
 
@@ -53,6 +68,10 @@
 
 <div id="funcionario"></div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 <div id="list" class="row">
    
     <div class="table-responsive col-md-12">
@@ -73,6 +92,7 @@
             <tbody>
              @foreach($funcionarios as $c)
              <tr>
+<<<<<<< HEAD
                 <td> <a href="{{ route('funcionario.show', $c->id) }}"> {{$c->usuario->name}} </a> </td>
                 <td> {{$c->cpf}}</td>
                 <td>{{$c->usuario->email}}</td>
@@ -83,6 +103,15 @@
                     <a class="btn btn-warning btn-xs" href="funcionario/{{$c->id}}/edit">Editar</a>   
                 </td>
                 
+=======
+                <td> <a href="{{ route('funcionario.show', $c->id) }}"> {{$c->nome}} </a> </td>
+                <td> {{$c->cpf}}</td>
+                <td>{{$c->email}}</td>
+                <td> {{$c->telefone}}</td>
+                <td>{{$c->rua}}</td>
+                <td><a class="btn btn-warning btn-xs" href="funcionario/{{$c->id}}/edit">Editar</a>   
+                </td>
+>>>>>>> master
                 <td><form action="{{ route('funcionario.destroy',$c->id) }}" method="post">
                     @csrf {{ csrf_field() }} 
                     {{ method_field('DELETE') }}
@@ -97,6 +126,7 @@
     
     
 </div>
+<<<<<<< HEAD
 </div> <!-- /#list -->
 
 
@@ -124,6 +154,15 @@
     <div class="col-md-12">
        <button id='btn-cadastrar-funcionario'  type="submit" class="btn btn-success mr-sm-2">
         <a style="text-decoration: white; color: inherit; " href="{{route('funcionario.create') }}">Adicionar</a></button>
+=======
+</div> 
+
+<br>
+<div id="actions" class="row">
+    <div>
+       <button id='btn-cadastrar-funcionario'  type="submit" class="btn btn-success" style="background-color: grey; border-color: white;">
+        <a style="text-decoration: white;" href="{{route('funcionario.create') }}">Adicionar</a></button>
+>>>>>>> master
 
         <br>
         <br>
@@ -131,6 +170,7 @@
 </div>
 
 
+<<<<<<< HEAD
 
 
 </div>
@@ -141,6 +181,12 @@
 
 
 <footer style="background-color: gray;">
+=======
+</div>
+
+
+<footer style="background-color: white;">
+>>>>>>> master
 
 </footer>
 

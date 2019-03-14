@@ -17,7 +17,11 @@
 <body>
 
     <header>
+<<<<<<< HEAD
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: gray; color:white;">
+=======
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: grey; color:white;height: 30px">
+>>>>>>> master
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,6 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a class="nav-link" href="#" style="color:white; font-size: 20px; font-family: Times New Roman;">Home</a>
                 </li>
 
@@ -36,6 +41,11 @@
             <form class="form-inline my-2 my-lg-0">
                 <a class="btn btn-danger btn-lg active" role="button" aria-pressed="true"href="#">Sair</a>
             </form>
+=======
+                    <a class="nav-link" href="http://localhost/sispizza/public/" style="color:white; font-size: 14px; font-family: Arial;">Home</a>
+                </li>
+            </ul>
+>>>>>>> master
         </div>
     </nav>
 </header>
@@ -50,7 +60,11 @@
 
 
 <form method="POST" action="{{route('funcionario.store')}}" id="form">
+<<<<<<< HEAD
   <!-- area de campos do form -->
+=======
+  <!-- campos de form -->
+>>>>>>> master
   @csrf
   <div class="row">
    <div class="form-group col-md-4">
@@ -78,10 +92,13 @@
      <label for="campo4">Email</label>
      <input type="text" class="form-control" id="email" name="email" placeholder="">
  </div>
+<<<<<<< HEAD
  <div class="form-group col-md-4">
      <label for="campo4">Salario</label>
      <input type="text" class="form-control" id="salario" name="salario" placeholder="">
  </div>
+=======
+>>>>>>> master
 </div>
 
 <div class="row">
@@ -108,26 +125,34 @@
  </div>
 </div>
 
+<<<<<<< HEAD
 <div class="row">
    <div class="form-group col-md-4">
      <label for="campo5">Carga Horaria</label>
      <input type="text" class="form-control" id="ch" name="ch" placeholder="">
  </div>
 
+=======
+>>>>>>> master
 
 
 
 <hr />
 <div id="actions" class="row">
     <div class="col-md-12">
+<<<<<<< HEAD
       <button id='btn-cadastrar-funcionario' type="submit" class="btn btn-success mr-sm-2">Salvar</button>
       <!--<a href="index.html" class="btn btn-default">Cancelar</a>-->
+=======
+      <button id='btn-cadastrar-funcionario' type="submit" class="btn btn-success mr-sm-3" style="background-color: grey;border-color: white;">Salvar</button>
+>>>>>>> master
       <br>
       <br>
   </div>
 </div>
 </form>
 
+<<<<<<< HEAD
     <!--<div id="listagem">
         <button id='btn-exibir-formulario' type="button" class="btn btn-success">Cadastrar</button>
         <br>
@@ -177,12 +202,18 @@
         </div>
     </div>-->
 
+=======
+>>>>>>> master
 
     <br>
 
 </div>
 
+<<<<<<< HEAD
 <footer style="background-color: gray;">
+=======
+<footer style="background-color: white;">
+>>>>>>> master
 
 </footer>
 

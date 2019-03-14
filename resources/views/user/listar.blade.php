@@ -7,7 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
     <title>listar Usuarios</title>
+=======
+    <title>listar Produto</title>
+>>>>>>> master
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -67,6 +71,7 @@
                 </tr>
             </thead>
             <tbody>
+<<<<<<< HEAD
                 
              @foreach($users as $c)
              <tr>
@@ -74,6 +79,14 @@
                 <td>{{$c->email}}</td>
                 <td>
                     <a class="btn btn btn-warning" href="user/{{$c->id}}/edit">Editar</a>  
+=======
+             @foreach($user as $c)
+             <tr>
+                <td> <a href="{{ route('user.show', $c->id) }}"> {{$c->name}} </a> </td> <!-- rever isso -->
+                <td>{{$c->email}}</td> <!-- nao tem sabor mas ta aprecendo de boa -->
+                <td>
+                    <a class="btn btn btn-danger" href="user/{{$c->id}}/edit">Editar</a>   
+>>>>>>> master
                 </td>
                 <td>
                     <form action="{{ route('user.destroy',$c->id) }}" method="post">
@@ -96,8 +109,13 @@
 <br>
 <div id="actions" class="row">
     <div>
+<<<<<<< HEAD
        <button id='btn-cadastrar-user'  type="submit" class="btn btn-success" style="border-color: white;">
         <a style="color: inherit;" href="{{route('user.create') }}">Adicionar</a></button>
+=======
+       <button id='btn-cadastrar-user'  type="submit" class="btn btn-success" style="background-color: grey; border-color: white;">
+        <a href="{{route('user.create') }}">Adicionar</a></button>
+>>>>>>> master
 
         <br>
         <br>

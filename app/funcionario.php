@@ -25,7 +25,11 @@ class funcionario extends Authenticatable
       'rua',
       'bairro',
       'numero',
+<<<<<<< HEAD
       'usuario_id',
+=======
+      'users_id',
+>>>>>>> master
 
     ];
 
@@ -41,9 +45,12 @@ class funcionario extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+<<<<<<< HEAD
 
 
     public function usuario(){
       return $this->hasOne('App\User', 'id', 'usuario_id');
     }
+=======
+>>>>>>> master
 }

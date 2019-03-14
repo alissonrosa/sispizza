@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Funcionario;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Hash;
+=======
+>>>>>>> master
 use App\User;
 
 class FuncionarioController extends Controller
@@ -17,7 +20,11 @@ class FuncionarioController extends Controller
     public function index()
     {
       
+<<<<<<< HEAD
         $funcionarios = Funcionario::with('usuario')->get();
+=======
+        $funcionarios = Funcionario::all();
+>>>>>>> master
 
         return view("funcionario.listar",['funcionarios'=>$funcionarios]);
 
@@ -45,7 +52,11 @@ class FuncionarioController extends Controller
         $user = new User();
 
         $funcionario->cpf = $request->input('cpf');
+<<<<<<< HEAD
         $funcionario->salario = $request->input('salario'); // falta o campo no formulario; como assim? mim esqueci
+=======
+        $funcionario->salario = $request->input('salario');
+>>>>>>> master
         $funcionario->ch = $request->input('ch');
 
         $user->name = $request->input('name');
@@ -54,6 +65,7 @@ class FuncionarioController extends Controller
         $user->rua = $request->input('rua');
         $user->bairro = $request->input('bairro');
         $user->numero = $request->input('numero');
+<<<<<<< HEAD
         $user->password = Hash::make('123456');
 
         $user->save();
@@ -61,6 +73,13 @@ class FuncionarioController extends Controller
         $funcionario->usuario_id = $user->id;
         $funcionario->save();
         
+=======
+
+        
+
+        $funcionario->save();
+        $user->save();
+>>>>>>> master
         return redirect()->route('funcionario.index','user.index');
 
         

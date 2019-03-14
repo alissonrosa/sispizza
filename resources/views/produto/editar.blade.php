@@ -44,7 +44,7 @@
 <div id="formulario">
 <form method="POST" action="{{route('produto.update',$f->id)}}" id="form">
         @csrf
-      <!-- area de campos do form -->
+      <!-- campos de form -->
 
       {{method_field('PUT')}}
       <div class="row">
@@ -73,7 +73,10 @@
       <div id="actions" class="row">
         <div class="col-md-12">
           <button id='btn-cadastrar-produto' type="submit" class="btn btn-success mr-sm-2" style="background-color: grey;border-color: white;">Salvar</button>
+<<<<<<< HEAD
           <!--<a href="index.html" class="btn btn-default">Cancelar</a>-->
+=======
+>>>>>>> master
           <br>
         <br>
         </div>
@@ -81,65 +84,12 @@
     </form>
 </div>
 
-    <!--<div id="formulario">
-        <div class="row">
-            <div class="col-sm">
-                <form method="POST" action="{{route('produto.update',$f->id)}}" id="form">
-                    @csrf
-                    
-                    <div class="form-group">
-                        <label for="id">Código</label>
-                        <input type="number" class="form-control" id="id" name="id" disabled="disabled" />
-                    </div>
-                
-
-                {{method_field('PUT')}}
-                    <div class="form-group">
-                        <label for="siape">Siape</label>
-                        <input type="text" class="form-control" id="siape" name="siape" value="{{$f->siape}}" />
-                    </div>
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" value="{{$f->nome}}" />
-                    </div>
-
-                    <div class="form-group">
-                        <label for="preço">E-mail</label>
-                        <input type="text" class="form-control" id="preço" name="preço" value="{{$f->preço}}"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" name="telefone" value="{{$f->telefone}}"/>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="tipo">Tipo</label>
-                        <input type="text" class="form-control" id="tipo" name="tipo" value="{{$f->tipo}}"/>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input type="password" class="form-control" id="senha" name="senha" value="{{$f->senha}}" />
-                    </div>
-
-                    <div class="form-inline">
-                        <button id='btn-cadastrar-produto' type="submit" class="btn btn-success mr-sm-2">Salvar</button>
-                     
-                    </div>
-                </form>
-
-
-
-            </div>
-        </div>
-    </div>-->
-
-
+ 
     <br>
 
 </div>
 
- <footer style="background-color: #339966;">
+ <footer style="background-color: grey;">
         
     </footer>
 
