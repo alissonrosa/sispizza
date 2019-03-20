@@ -74,7 +74,15 @@
                 <td>{{$c->preço}}</td>
                 <td>{{$c->tipo}}</td> <!-- nao tem sabor mas ta aprecendo de boa -->
                 <td>
+<<<<<<< HEAD
                     <a class="btn btn btn-danger" href="produto/{{$c->id}}/edit">Editar</a>   
+=======
+<<<<<<< HEAD
+                    <a class="btn btn btn-warning" href="produto/{{$c->id}}/edit">Editar</a>   
+=======
+                    <a class="btn btn btn-danger" href="produto/{{$c->id}}/edit">Editar</a>   
+>>>>>>> master
+>>>>>>> master
                 </td>
                 <td>
                     <form action="{{ route('produto.destroy',$c->id) }}" method="post">
@@ -96,8 +104,18 @@
 <br>
 <div id="actions" class="row">
     <div>
+<<<<<<< HEAD
        <button id='btn-cadastrar-produto'  type="submit" class="btn btn-success" style="border-color: white;">
         <a style="color: inherit;" href="{{route('produto.create') }}">Adicionar</a></button>
+=======
+<<<<<<< HEAD
+       <button id='btn-cadastrar-produto'  type="submit" class="btn btn-success" style="border-color: white;">
+        <a style="color: inherit;" href="{{route('produto.create') }}">Adicionar</a></button>
+=======
+       <button id='btn-cadastrar-produto'  type="submit" class="btn btn-success" style="background-color: grey; border-color: white;">
+        <a href="{{route('produto.create') }}">Adicionar</a></button>
+>>>>>>> master
+>>>>>>> master
 
         <br>
         <br>
@@ -110,10 +128,16 @@
 </div>
 
 
+<<<<<<< HEAD
 
 <!--<a href="{{ route('produto.create') }}">Novo</a>-->
 
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> master
+>>>>>>> master
 <footer style="background-color: white;">
 
 </footer>

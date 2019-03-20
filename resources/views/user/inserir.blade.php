@@ -5,7 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
     <title>cadastrarUsuario</title>
+=======
+<<<<<<< HEAD
+    <title>cadastrarUsuario</title>
+=======
+    <title>cadastrarFuncionarios</title>
+>>>>>>> master
+>>>>>>> master
     <link rel="icon" href="../img/ico.png" type="image/gif">
     <link rel="stylesheet" href="./bundle/css.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -44,7 +52,15 @@
 
 <div class="container-fluid">
 
+<<<<<<< HEAD
     <h3 class="page-header" style="font-size: 20px; font-family: Arial;">Adicionar Usuario</h3>
+=======
+<<<<<<< HEAD
+    <h3 class="page-header" style="font-size: 20px; font-family: Arial;">Adicionar Usuario</h3>
+=======
+    <h3 class="page-header" style="font-size: 20px; font-family: Arial;">Adicionar Funcionario</h3>
+>>>>>>> master
+>>>>>>> master
 </br>
 <div id="msg"></div>
 
@@ -172,7 +188,15 @@
 
 </div>
 
+<<<<<<< HEAD
 <footer style="background-color: gray;">
+=======
+<<<<<<< HEAD
+<footer style="background-color: gray;">
+=======
+<footer style="background-color: #339966;">
+>>>>>>> master
+>>>>>>> master
 
 </footer>
 

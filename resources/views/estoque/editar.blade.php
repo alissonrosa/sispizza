@@ -5,15 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
-    <title>editarUsuarios</title>
-=======
-<<<<<<< HEAD
-    <title>editarUsuarios</title>
-=======
-    <title>editarFuncionarios</title>
->>>>>>> master
->>>>>>> master
+    <title>editarEstoque</title>
     <link rel="icon" href="../img/ico.png" type="image/gif">
     <link rel="stylesheet" href="./bundle/css.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -25,15 +17,7 @@
 <body>
 
     <header>
-<<<<<<< HEAD
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: gray; color:white;">
-=======
-<<<<<<< HEAD
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: gray; color:white;">
-=======
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #339966; color:white;">
->>>>>>> master
->>>>>>> master
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -49,6 +33,9 @@
                         <a class="nav-link" href="#" style="color:white; font-size: 20px; font-family: Times New Roman; ">Funcionário</a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"style="color:white; font-size: 20px; font-family: Times New Roman;">Paciente</a>
+                    </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <a class="btn btn-danger btn-lg active" role="button" aria-pressed="true"href="../../index.html">Sair</a>
@@ -61,15 +48,7 @@
 
 <div class="container">
 
-<<<<<<< HEAD
-    <h1 style="font-size: 20px; font-family: Arial;">Editar Usuario</h1>
-=======
-<<<<<<< HEAD
-    <h1 style="font-size: 20px; font-family: Arial;">Editar Usuario</h1>
-=======
-    <h1 style="font-size: 20px; font-family: Arial;">Editar Funcionário</h1>
->>>>>>> master
->>>>>>> master
+    <h1 style="font-size: 20px; font-family: Arial;">Editar Estoque</h1>
     <br>
 
 
@@ -86,38 +65,10 @@
          </div>
      
          <div class="form-group col-md-4">
-           <label for="campo2">Cpf</label>
-           <input type="text" class="form-control" id="cpf" name="cpf" value="{{$f->cpf}}">
+           <label for="campo2">Quantidade</label>
+           <input type="text" class="form-control" id="quantidade" name="quantidade" value="{{$f->quantidade}}">
          </div>
-     
-         <div class="form-group col-md-4">
-           <label for="campo3">Email</label>
-           <input type="text" class="form-control" id="email" name="email" value="{{$f->email}}" placeholder="">
-         </div>
-        </div>
 
-      <div class="row">
-         <div class="form-group col-md-4">
-           <label for="campo1">Telefone</label>
-           <input type="text" class="form-control" id="telefone" name="telefone" value="{{$f->telefone}}">
-         </div>
-     
-         <div class="form-group col-md-4">
-           <label for="campo2">Rua</label>
-           <input type="text" class="form-control" id="rua" name="rua"  value="{{$f->rua}}">
-         </div>
-     
-         <div class="form-group col-md-4">
-           <label for="campo3">Bairro</label>
-           <input type="text" class="form-control" id="bairro" name="bairro" name="bairro" value="{{$f->bairro}}">
-         </div>
-        </div>
-
-         <div class="form-group col-md-4">
-           <label for="campo3">Numero</label>
-           <input type="text" class="form-control" id="numero" name="numero" name="numero" value="{{$f->numero}}">
-         </div>
-        </div>        
 
       <hr />
       <div id="actions" class="row">
@@ -189,21 +140,13 @@
 
 </div>
 
-<<<<<<< HEAD
- <footer style="background-color: gray;">
-=======
-<<<<<<< HEAD
- <footer style="background-color: gray;">
-=======
  <footer style="background-color: #339966;">
->>>>>>> master
->>>>>>> master
         
     </footer>
 
 <script src="../../bundle/babelpolyfill.bundle.js"></script>
 <script src="../../bundle/index.bundle.js"></script>
-<script src="../../bundle/funcionarioController.bundle.js"></script>
+<script src="../../bundle/estoqueController.bundle.js"></script>
 
 </body>
 

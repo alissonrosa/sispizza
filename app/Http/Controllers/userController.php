@@ -3,7 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\user;
+=======
+<<<<<<< HEAD
+use App\user;
+=======
+use App\User;
+>>>>>>> master
+>>>>>>> master
 
 class usuarioController extends Controller
 {
@@ -39,6 +47,10 @@ class usuarioController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
         $user = new User();
 
         $user->name = $request->input('name');
@@ -46,6 +58,19 @@ class usuarioController extends Controller
         $user->save();
 
         return redirect()->route('user.index');
+<<<<<<< HEAD
+=======
+=======
+        $users = new user();
+
+        $users->name = $request->input('name');
+        $users->email = $request->input('email')
+        $users->save();
+        return redirect()->route('user.index');
+
+        
+>>>>>>> master
+>>>>>>> master
     }
 
     /**
@@ -56,7 +81,15 @@ class usuarioController extends Controller
      */
     public function show($id)
     {
+<<<<<<< HEAD
         $users = user::find($id);
+=======
+<<<<<<< HEAD
+        $users = user::find($id);
+=======
+        $user = user::find($id);
+>>>>>>> master
+>>>>>>> master
     }
 
     /**

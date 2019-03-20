@@ -88,7 +88,10 @@
                     <a href="http://localhost/sispizza/public/produto">Produtos</a>
                     <a href="http://localhost/sispizza/public/funcionario">Funcionarios</a>
                     <a href="http://localhost/sispizza/public/usuario">Usuarios</a>
+<<<<<<< HEAD
                     <a href="http://localhost/sispizza/public/bebida">Bebidas</a>
+=======
+>>>>>>> master
                 </div>
             </div>
         </div>

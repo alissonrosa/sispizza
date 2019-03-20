@@ -40,8 +40,11 @@ class user extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+<<<<<<< HEAD
 
     public function pedidos(){
         return $this->hasMany('App\pedido');
     }
+=======
+>>>>>>> master
 }

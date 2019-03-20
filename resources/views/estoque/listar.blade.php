@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>listarFuncionario</title>
+    <title>listarEstoque</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -21,15 +21,7 @@
     <script src="js/bootstrap.min.js"></script>
 
     <header>
-<<<<<<< HEAD
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: gray; color:white; height: 50px;" >
-=======
-<<<<<<< HEAD
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: gray; color:white; height: 50px;" >
-=======
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: grey; color:white; height: 30px;" >
->>>>>>> master
->>>>>>> master
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #339966; color:white; height: 50px;" >
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,60 +30,34 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-<<<<<<< HEAD
-                    <a class="nav-link" href="http://localhost/sispizza/public/" style="color: white; font-size: 20px; font-family: Times New Roman;"> Home
-=======
-<<<<<<< HEAD
-                    <a class="nav-link" href="http://localhost/sispizza/public/" style="color: white; font-size: 20px; font-family: Times New Roman;"> Home
-=======
-                    <a class="nav-link" href="http://localhost/sispizza/public/" style="color: white; font-size: 14px; font-family: Arial;"> Home
->>>>>>> master
->>>>>>> master
+                    <a class="nav-link" href="#" style="color: white; font-size: 20px; font-family: Times New Roman;"> Home
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="http://localhost/SisSaude/public/paciente" style="color:white; font-size: 20px; font-family: Times New Roman;"></a>
+                </li>
             </ul>
-<<<<<<< HEAD
             <form class="form-inline my-2 my-lg-0">
                 <a class="btn btn-danger btn-lg active" role="button" aria-pressed="true"href="../../login.html" style="">Sair</a>
             </form>
-=======
-<<<<<<< HEAD
-            <form class="form-inline my-2 my-lg-0">
-                <a class="btn btn-danger btn-lg active" role="button" aria-pressed="true"href="../../login.html" style="">Sair</a>
-            </form>
-=======
->>>>>>> master
->>>>>>> master
         </div>
     </nav>
 </header>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> master
->>>>>>> master
 </br>
 </br>
 
 
 <div class="container">
 
-    <h1 style="font-size: 20px; font-family: Arial;">Funcionarios</h1>
+    <h1 style="font-size: 20px; font-family: Arial;">Estoques</h1>
 </br>
 
-<div id="funcionario"></div>
+<div id="estoque"></div>
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> master
->>>>>>> master
 <div id="list" class="row">
    
     <div class="table-responsive col-md-12">
@@ -101,46 +67,20 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Cpf</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th>Rua</th>
+                    <th>Quantidade</th>
                     <th class="actions"></th>
                     <th class="actions"></th>
                 </tr>
             </thead>
             <tbody>
-             @foreach($funcionarios as $c)
+             @foreach($estoques as $c)
              <tr>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> master
-                <td> <a href="{{ route('funcionario.show', $c->id) }}"> {{$c->usuario->name}} </a> </td>
-                <td> {{$c->cpf}}</td>
-                <td>{{$c->usuario->email}}</td>
-                <td> {{$c->usuario->telefone}}</td>
-                <td>{{$c->usuario->rua}}</td>
-<<<<<<< HEAD
-                <td><a class="btn btn-warning btn-xs" href="funcionario/{{$c->id}}/edit">Editar</a>   
+                <td> <a href="{{ route('estoque.show', $c->id) }}"> {{$c->nome}} </a> </td>
+                <td> {{$c->nome}}</td>
+                <td>{{$c->quantidade}}</td>
+                <td><a class="btn btn-warning btn-xs" href="estoque/{{$c->id}}/edit">Editar</a>   
                 </td>
-=======
-                
-                <td>
-                    <a class="btn btn-warning btn-xs" href="funcionario/{{$c->id}}/edit">Editar</a>   
-                </td>
-                
-=======
-                <td> <a href="{{ route('funcionario.show', $c->id) }}"> {{$c->nome}} </a> </td>
-                <td> {{$c->cpf}}</td>
-                <td>{{$c->email}}</td>
-                <td> {{$c->telefone}}</td>
-                <td>{{$c->rua}}</td>
-                <td><a class="btn btn-warning btn-xs" href="funcionario/{{$c->id}}/edit">Editar</a>   
-                </td>
->>>>>>> master
->>>>>>> master
-                <td><form action="{{ route('funcionario.destroy',$c->id) }}" method="post">
+                <td><form action="{{ route('estoque.destroy',$c->id) }}" method="post">
                     @csrf {{ csrf_field() }} 
                     {{ method_field('DELETE') }}
                     <button type="submit" class="btn btn-danger">Excluir</button>
@@ -154,10 +94,6 @@
     
     
 </div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> master
 </div> <!-- /#list -->
 
 
@@ -183,20 +119,8 @@
 <br>
 <div id="actions" class="row">
     <div class="col-md-12">
-       <button id='btn-cadastrar-funcionario'  type="submit" class="btn btn-success mr-sm-2">
-        <a style="text-decoration: white; color: inherit; " href="{{route('funcionario.create') }}">Adicionar</a></button>
-<<<<<<< HEAD
-=======
-=======
-</div> 
-
-<br>
-<div id="actions" class="row">
-    <div>
-       <button id='btn-cadastrar-funcionario'  type="submit" class="btn btn-success" style="background-color: grey; border-color: white;">
-        <a style="text-decoration: white;" href="{{route('funcionario.create') }}">Adicionar</a></button>
->>>>>>> master
->>>>>>> master
+       <button id='btn-cadastrar-estoque'  type="submit" class="btn btn-success mr-sm-2">
+        <a style="text-decoration: white;" href="{{route('estoque.create') }}">Adicionar</a></button>
 
         <br>
         <br>
@@ -204,10 +128,6 @@
 </div>
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> master
 
 
 </div>
@@ -217,22 +137,13 @@
 <!--<a href="{{ route('funcionario.create') }}">Novo</a>-->
 
 
-<footer style="background-color: gray;">
-<<<<<<< HEAD
-=======
-=======
-</div>
-
-
-<footer style="background-color: white;">
->>>>>>> master
->>>>>>> master
+<footer style="background-color: #339966;">
 
 </footer>
 
 <script src="../../bundle/babelpolyfill.bundle.js"></script>
 <script src="../../bundle/index.bundle.js"></script>
-<script src="../../bundle/relestoqueController.bundle.js"></script>
+<script src="../../bundle/estoqueController.bundle.js"></script>
 
 </body>
 
