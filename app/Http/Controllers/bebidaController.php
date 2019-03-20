@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\bebida;
 
 class bebidaController extends Controller
 {
@@ -13,7 +14,11 @@ class bebidaController extends Controller
      */
     public function index()
     {
-        //
+      
+        $bebidas = bebida::all();
+
+        return view("bebida.listar",['bebidas'=>$bebidas]);
+
     }
 
     /**
@@ -23,7 +28,7 @@ class bebidaController extends Controller
      */
     public function create()
     {
-        //
+         return view("bebida.inserir");
     }
 
     /**
@@ -34,7 +39,16 @@ class bebidaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $bebida = new bebida();
+        //$produto->id = $request->input('id');
+        $bebida->nome = $request->input('nome');
+        $bebida->tipo = $request->input('tipo');
+        $bebida->quantidade = $request->input('quantidade');
+
+        $bebida->save();
+        return redirect()->route('bebida.index');
+
+        
     }
 
     /**
@@ -45,7 +59,7 @@ class bebidaController extends Controller
      */
     public function show($id)
     {
-        //
+        $bebida = bebida::find($id);
     }
 
     /**
@@ -56,7 +70,8 @@ class bebidaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $bebida = bebida::find($id);
+        return view('bebida.editar', ['f' => $bebida]);
     }
 
     /**
@@ -68,7 +83,14 @@ class bebidaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       //echo "$id";
+        $bebida = bebida::find($id); // consulta dos dados que estão no BD 
+        $bebida->nome = $request->input('nome');
+        $bebida->tipo = $request->input('tipo');
+        $bebida->quantidade = $request->input('quantidade');
+
+        $bebida->save();
+        return redirect()->route('bebida.index');
     }
 
     /**
@@ -79,6 +101,9 @@ class bebidaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $bebida = bebida::find($id); // consulta no BD
+        $bebida->delete();  // Exclui do BD
+
+        return redirect()->route('bebida.index');
     }
 }

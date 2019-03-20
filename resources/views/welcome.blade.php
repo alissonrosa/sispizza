@@ -13,7 +13,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: red;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -81,12 +81,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Pizzaria Canaã
+                    Interface de Teste <br>Pizzaria Canaã
                 </div>
 
                 <div class="links">
                     <a href="http://localhost/sispizza/public/produto">Produtos</a>
-                    <a href="http://localhost/sispizza/public/cliente">clientes</a>
+                    <a href="http://localhost/sispizza/public/funcionario">Funcionarios</a>
+                    <a href="http://localhost/sispizza/public/usuario">Usuarios</a>
+                    <a href="http://localhost/sispizza/public/bebida">Bebidas</a>
                 </div>
             </div>
         </div>

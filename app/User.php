@@ -6,9 +6,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class user extends Authenticatable
 {
     use Notifiable;
+
+
+    protected $table = "usuarios";
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','id','telefone','rua','bairro','numero','funcionario_id',
+        'name', 'email', 'password','id','telefone','rua','bairro','numero','users_id',
     ];
     //    protected $fillable = ['id','name','telefone','email','rua','bairro','numero','funcionario_id'];
 
@@ -37,6 +40,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function pedidos(){
+        return $this->hasMany('App\pedido');
+    }
 }
-
-
